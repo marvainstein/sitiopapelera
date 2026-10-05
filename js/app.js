@@ -56,7 +56,11 @@
   const cabecera = $("#cabecera");
   const menuBtn = $("#menu-btn");
   const nav = $("#nav");
-  const alScroll = () => cabecera.classList.toggle("compacta", window.scrollY > 40);
+  const alScroll = () => {
+    cabecera.classList.toggle("compacta", window.scrollY > 40);
+    const total = document.documentElement.scrollHeight - innerHeight;
+    cabecera.style.setProperty("--progreso", total > 0 ? Math.min(1, scrollY / total).toFixed(4) : 0);
+  };
   window.addEventListener("scroll", alScroll, { passive: true });
   alScroll();
 
@@ -239,7 +243,7 @@
     }, el("span", { class: "agregar__txt", text: enLista ? "Agregado" : "Agregar" }));
     return el(
       "li",
-      { class: "tarjeta", style: `--orden:${Math.min(orden, 12)}` },
+      { class: `tarjeta tarjeta--${p.cat}`, style: `--orden:${Math.min(orden, 12)}` },
       fotos,
       el("div", { class: "tarjeta__cuerpo" },
         el("span", { class: `etiqueta etiqueta--${p.cat}`, text: CATEGORIAS[p.cat].nombre }),
