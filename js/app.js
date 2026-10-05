@@ -2,11 +2,10 @@
   "use strict";
 
   // ——— Configuración ———
-  // Número de WhatsApp con código de país, sin "+" ni espacios (ej.: "5491145881052").
-  // Si está vacío, los botones usan el enlace de siempre y la consulta se copia
-  // al portapapeles para pegarla en el chat.
-  const WHATSAPP_NUMERO = "";
-  const WHATSAPP_ENLACE = "https://walink.co/ae8755";
+  // Número de WhatsApp con código de país y el 9 de celular, sin "+" ni espacios.
+  const WHATSAPP_NUMERO = "5491144796939";
+  // Horario de atención por día de la semana (0 = domingo), en hora de Buenos Aires.
+  const HORARIO = { 1: [8, 17], 2: [8, 17], 3: [8, 17], 4: [8, 17], 5: [8, 17], 6: [8, 13] };
   const CLAVE_GUARDADO = "papelera-paternal:consulta";
 
   const $ = (sel, raiz = document) => raiz.querySelector(sel);
@@ -28,7 +27,6 @@
     return normalizar(texto).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
   }
   function enlaceWhatsapp(texto) {
-    if (!WHATSAPP_NUMERO) return WHATSAPP_ENLACE;
     return `https://wa.me/${WHATSAPP_NUMERO}${texto ? `?text=${encodeURIComponent(texto)}` : ""}`;
   }
   function el(etiqueta, atributos = {}, ...hijos) {
@@ -411,30 +409,51 @@
     ].join("\n");
   }
 
-  $("#enviar-consulta").addEventListener("click", async () => {
-    const texto = mensajeConsulta();
-    if (WHATSAPP_NUMERO) {
-      window.open(enlaceWhatsapp(texto), "_blank", "noopener");
-      return;
-    }
-    // Sin número configurado: copiamos el mensaje para pegarlo en el chat.
-    const avisoConsulta = $("#consulta-aviso");
-    let copiado = false;
-    try {
-      await navigator.clipboard.writeText(texto);
-      copiado = true;
-    } catch (_) { /* el navegador no dejó copiar */ }
-    avisoConsulta.hidden = false;
-    avisoConsulta.textContent = copiado
-      ? "Copiamos tu consulta. Pegala en el chat de WhatsApp que se abrió."
-      : "Copiá tu consulta y pegala en el chat de WhatsApp:\n\n" + texto;
-    window.open(WHATSAPP_ENLACE, "_blank", "noopener");
+  $("#enviar-consulta").addEventListener("click", () => {
+    window.open(enlaceWhatsapp(mensajeConsulta()), "_blank", "noopener");
   });
 
-  // Si hay número configurado, los botones generales también lo usan
-  if (WHATSAPP_NUMERO) {
-    $$(".js-wsp").forEach((a) => (a.href = enlaceWhatsapp("¡Hola Papelera Paternal! Quería hacer una consulta.")));
+  // Los botones generales abren el chat con un saludo ya escrito
+  $$(".js-wsp").forEach((a) => (a.href = enlaceWhatsapp("¡Hola Papelera Paternal! Quería hacer una consulta.")));
+
+  // ——— Abierto / cerrado según el horario ———
+  const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+  const formatoHora = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Argentina/Buenos_Aires",
+    weekday: "short",
+    hour: "numeric",
+    minute: "numeric",
+    hourCycle: "h23",
+  });
+  function ahoraEnBuenosAires() {
+    const partes = Object.fromEntries(formatoHora.formatToParts(new Date()).map((p) => [p.type, p.value]));
+    const dia = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(partes.weekday);
+    return { dia, hora: Number(partes.hour) + Number(partes.minute) / 60 };
   }
+  function estadoDelLocal() {
+    const { dia, hora } = ahoraEnBuenosAires();
+    const hoy = HORARIO[dia];
+    if (hoy && hora >= hoy[0] && hora < hoy[1]) {
+      const falta = hoy[1] - hora;
+      return { abierto: true, texto: falta <= 1 ? `Abierto · cierra en ${Math.max(1, Math.round(falta * 60))} min` : `Abierto ahora · hasta las ${hoy[1]} h` };
+    }
+    if (hoy && hora < hoy[0]) return { abierto: false, texto: `Cerrado · abre hoy a las ${hoy[0]} h` };
+    for (let i = 1; i <= 7; i++) {
+      const d = (dia + i) % 7;
+      if (HORARIO[d]) return { abierto: false, texto: `Cerrado · abre ${i === 1 ? "mañana" : `el ${DIAS[d]}`} a las ${HORARIO[d][0]} h` };
+    }
+    return { abierto: false, texto: "Cerrado" };
+  }
+  function pintarEstado() {
+    const { abierto, texto } = estadoDelLocal();
+    $$("[data-estado]").forEach((n) => {
+      n.hidden = false;
+      n.classList.toggle("abierto", abierto);
+      n.textContent = texto;
+    });
+  }
+  pintarEstado();
+  setInterval(pintarEstado, 60 * 1000);
 
   // ——— Mapa: se carga cuando está por aparecer ———
   const mapa = $("#mapa");

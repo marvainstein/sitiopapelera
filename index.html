@@ -28,8 +28,12 @@
     "url": "https://papelerapaternal.com.ar/",
     "image": "https://papelerapaternal.com.ar/img/marca/og.jpg",
     "logo": "https://papelerapaternal.com.ar/img/marca/logo.png",
-    "telephone": ["+54 11 4588-1052", "+54 11 4582-1920"],
+    "telephone": ["+54 11 4588-1052", "+54 11 4582-1920", "+54 9 11 4479-6939"],
     "paymentAccepted": "Efectivo, Transferencia",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" }
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Nicasio Oroño 2237",
@@ -46,7 +50,8 @@
   <header class="cabecera" id="cabecera">
     <div class="cabecera__in">
       <a href="#inicio" class="marca" aria-label="Papelera Paternal, inicio">
-        <img src="img/marca/logo.webp" alt="Papelera Paternal" width="678" height="240">
+        <img class="marca__blanco" src="img/marca/logo-blanco.webp" alt="Papelera Paternal" width="678" height="240">
+        <img class="marca__color" src="img/marca/logo.webp" alt="" width="678" height="240">
       </a>
       <nav class="nav" id="nav" aria-label="Secciones">
         <a href="#catalogo">Productos</a>
@@ -73,20 +78,23 @@
       </video>
       <div class="hero__velo"></div>
       <div class="hero__contenido">
-        <p class="hero__chapa revelar">Negocio familiar · La Paternal, CABA</p>
+        <div class="hero__chapas revelar">
+          <p class="hero__chapa hero__chapa--estado" data-estado hidden></p>
+          <p class="hero__chapa">Negocio familiar · La Paternal, CABA</p>
+        </div>
         <h1 class="hero__titulo revelar">
-          Todo para
-          <span class="rotador" id="rotador" aria-live="polite">
-            <span class="rotador__palabra activa">el embalaje</span>
-            <span class="rotador__palabra">tu confitería</span>
+          <span class="visualmente-oculto">Especialistas en embalajes, confitería y descartables</span>
+          <span aria-hidden="true">Especialistas en</span>
+          <span class="rotador" id="rotador" aria-hidden="true">
+            <span class="rotador__palabra activa">embalajes</span>
+            <span class="rotador__palabra">confitería</span>
             <span class="rotador__palabra">descartables</span>
-            <span class="rotador__palabra">tu negocio</span>
           </span>
         </h1>
         <p class="hero__bajada revelar">Venta <strong>minorista y mayorista</strong>. Bolsas, film, stretch, cintas, cartón y papel en un solo lugar.</p>
         <div class="hero__acciones revelar">
           <a class="btn btn--claro" href="#catalogo">Ver productos</a>
-          <a class="btn btn--wsp js-wsp" href="https://walink.co/ae8755" target="_blank" rel="noopener">
+          <a class="btn btn--wsp js-wsp" href="https://wa.me/5491144796939" target="_blank" rel="noopener">
             <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
             Hacé tu consulta
           </a>
@@ -145,7 +153,7 @@
         <ul class="grilla" id="grilla"></ul>
         <div class="vacio" id="vacio" hidden>
           <p>No encontramos <strong id="vacio-termino"></strong> en el catálogo, pero tenemos más de 200 productos.</p>
-          <a class="btn btn--wsp js-wsp js-wsp-busqueda" href="https://walink.co/ae8755" target="_blank" rel="noopener">Preguntanos por WhatsApp</a>
+          <a class="btn btn--wsp js-wsp js-wsp-busqueda" href="https://wa.me/5491144796939" target="_blank" rel="noopener">Preguntanos por WhatsApp</a>
         </div>
       </div>
     </section>
@@ -188,6 +196,11 @@
             <h3>Envíos</h3>
             <p>En CABA, coordinado previamente.</p>
           </div>
+          <div class="dato revelar">
+            <span class="dato__icono" aria-hidden="true">🕗</span>
+            <h3>Horario</h3>
+            <p>Lunes a viernes de 8 a 17 h.<br>Sábados de 8 a 13 h.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -209,7 +222,15 @@
             </li>
             <li>
               <span class="contacto__etq">WhatsApp</span>
-              <a class="js-wsp" href="https://walink.co/ae8755" target="_blank" rel="noopener">Escribinos</a>
+              <a class="js-wsp" href="https://wa.me/5491144796939" target="_blank" rel="noopener">11 4479-6939</a>
+            </li>
+            <li>
+              <span class="contacto__etq">Horario</span>
+              <span class="estado" data-estado hidden></span>
+              <span class="horario">
+                <span>Lunes a viernes <strong>8 a 17 h</strong></span>
+                <span>Sábados <strong>8 a 13 h</strong></span>
+              </span>
             </li>
           </ul>
           <div class="contacto__acciones">
@@ -235,7 +256,7 @@
   </footer>
 
   <!-- Botón flotante de WhatsApp -->
-  <a class="wsp-flotante js-wsp" href="https://walink.co/ae8755" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+  <a class="wsp-flotante js-wsp" href="https://wa.me/5491144796939" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
   </a>
 
@@ -257,7 +278,6 @@
     <div class="consulta__pie" id="consulta-pie" hidden>
       <button type="button" class="btn btn--wsp btn--ancho" id="enviar-consulta">Enviar por WhatsApp</button>
       <button type="button" class="enlace" id="vaciar-consulta">Vaciar lista</button>
-      <p class="consulta__aviso" id="consulta-aviso" hidden></p>
     </div>
   </aside>
 

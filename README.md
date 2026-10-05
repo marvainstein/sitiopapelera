@@ -6,7 +6,7 @@ Es un sitio estático (HTML, CSS y JavaScript, sin compilar nada), así que se p
 
 ## Qué tiene
 
-- **Portada con video** del local, frase que va cambiando y contadores animados.
+- **Portada con video** del local: “Especialistas en” + una palabra que gira hacia abajo (embalajes, confitería, descartables), contadores animados y un cartel que avisa si el local está **abierto o cerrado** según el horario.
 - **Catálogo con buscador y filtros** por rubro (Plástico, Cartón, Papel). La búsqueda encuentra también medidas, por ejemplo “50x70” o “48mm”.
 - **“Mi consulta”**: el cliente va agregando productos, elige la medida y la cantidad, y manda todo junto por WhatsApp en un solo mensaje. La lista queda guardada en el navegador aunque cierre la página.
 - **Cómo comprar**: pasos, medios de pago, retiro y envíos.
@@ -19,13 +19,18 @@ Es un sitio estático (HTML, CSS y JavaScript, sin compilar nada), así que se p
 | --- | --- |
 | Productos, medidas y fotos | `js/productos.js` (está explicado arriba de todo) |
 | Fotos de productos | `img/productos/` (WebP, ~500 px) |
-| Número de WhatsApp | `js/app.js`, constante `WHATSAPP_NUMERO` |
+| Número de WhatsApp | `js/app.js`, constante `WHATSAPP_NUMERO` (y los enlaces `wa.me` de `index.html`) |
+| Horario de atención | `js/app.js`, constante `HORARIO` (para el cartel abierto/cerrado) y los textos en `index.html` |
 | Textos, teléfonos y dirección | `index.html` |
 | Colores y tipografías | `css/estilos.css`, arriba de todo (`:root`) |
 
-### Número de WhatsApp
+### WhatsApp
 
-Mientras `WHATSAPP_NUMERO` esté vacío, los botones usan el enlace corto de siempre (`walink.co/ae8755`) y la consulta se copia al portapapeles para que el cliente la pegue en el chat. Si se completa con el número (con código de país, sin `+` ni espacios, por ejemplo `5491145881052`), el mensaje llega **ya escrito** en el WhatsApp del cliente.
+Todos los botones abren el chat con **11 4479-6939** con un mensaje ya escrito. La consulta armada en el catálogo llega con la lista de productos, medidas y cantidades.
+
+### Horario
+
+Lunes a viernes de 8 a 17 h y sábados de 8 a 13 h. El cartel “Abierto / Cerrado” usa la hora de Buenos Aires; no tiene en cuenta feriados.
 
 ### Agregar un producto
 
