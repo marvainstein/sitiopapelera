@@ -41,6 +41,10 @@ Lunes a viernes de 8 a 17 h y sábados de 8 a 13 h. El cartel “Abierto / Cerra
 { cat: "papel", nombre: "Bolsas kraft", medidas: ["Chica", "Mediana", "Grande"], fotos: ["bolsas-kraft"] },
 ```
 
+### Después de cada cambio
+
+En `index.html`, subir el número de versión de `estilos.css`, `productos.js` y `app.js` (por ejemplo de `?v=3` a `?v=4`). Así los navegadores bajan los archivos nuevos en lugar de usar los que tienen guardados.
+
 ## Probar en la compu
 
 ```sh
