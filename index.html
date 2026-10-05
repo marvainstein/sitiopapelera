@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papelera Paternal · Embalaje, confitería y descartables</title>
+  <meta name="description" content="Negocio familiar en La Paternal, CABA. Más de 200 productos de embalaje, confitería y descartables: bolsas, film, stretch, cintas, cartón y papel. Venta minorista y mayorista.">
+  <meta name="theme-color" content="#8e0f22">
+  <meta property="og:title" content="Papelera Paternal">
+  <meta property="og:description" content="Embalaje, confitería y descartables. Venta minorista y mayorista en La Paternal, CABA.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://papelerapaternal.com.ar/">
+  <meta property="og:image" content="https://papelerapaternal.com.ar/img/marca/og.jpg">
+  <meta property="og:locale" content="es_AR">
+  <link rel="icon" href="img/marca/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="img/marca/icono-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="img/marca/icono-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Papelera Paternal",
+    "description": "Artículos para el embalaje, confitería y descartables. Venta minorista y mayorista.",
+    "url": "https://papelerapaternal.com.ar/",
+    "image": "https://papelerapaternal.com.ar/img/marca/og.jpg",
+    "logo": "https://papelerapaternal.com.ar/img/marca/logo.png",
+    "telephone": ["+54 11 4588-1052", "+54 11 4582-1920"],
+    "paymentAccepted": "Efectivo, Transferencia",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nicasio Oroño 2237",
+      "addressLocality": "La Paternal",
+      "addressRegion": "Ciudad Autónoma de Buenos Aires",
+      "addressCountry": "AR"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="saltar" href="#catalogo">Ir al catálogo</a>
+
+  <header class="cabecera" id="cabecera">
+    <div class="cabecera__in">
+      <a href="#inicio" class="marca" aria-label="Papelera Paternal, inicio">
+        <img src="img/marca/logo.webp" alt="Papelera Paternal" width="678" height="240">
+      </a>
+      <nav class="nav" id="nav" aria-label="Secciones">
+        <a href="#catalogo">Productos</a>
+        <a href="#como-comprar">Cómo comprar</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="btn-consulta" id="abrir-consulta" type="button" aria-haspopup="dialog" aria-controls="consulta">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h-2l-1 2v2h2l3.6 7.6-1.4 2.4c-.5.9.2 2 1.2 2H19v-2H9.4l1.1-2h7.4c.8 0 1.4-.4 1.7-1l3.4-6.3-1.7-1-3.4 6.3H11L7 4z"/><circle cx="9" cy="21" r="1.4"/><circle cx="17" cy="21" r="1.4"/></svg>
+        <span class="btn-consulta__txt">Mi consulta</span>
+        <span class="contador" id="contador" hidden>0</span>
+      </button>
+      <button class="menu-btn" id="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ——— Portada ——— -->
+    <section class="hero" id="inicio">
+      <video class="hero__video" id="hero-video" autoplay muted loop playsinline preload="metadata" poster="img/marca/local.jpg" aria-hidden="true">
+        <source src="video/local-chico.mp4" type="video/mp4" media="(max-width: 760px)">
+        <source src="video/local.mp4" type="video/mp4">
+      </video>
+      <div class="hero__velo"></div>
+      <div class="hero__contenido">
+        <p class="hero__chapa revelar">Negocio familiar · La Paternal, CABA</p>
+        <h1 class="hero__titulo revelar">
+          Todo para
+          <span class="rotador" id="rotador" aria-live="polite">
+            <span class="rotador__palabra activa">el embalaje</span>
+            <span class="rotador__palabra">tu confitería</span>
+            <span class="rotador__palabra">descartables</span>
+            <span class="rotador__palabra">tu negocio</span>
+          </span>
+        </h1>
+        <p class="hero__bajada revelar">Venta <strong>minorista y mayorista</strong>. Bolsas, film, stretch, cintas, cartón y papel en un solo lugar.</p>
+        <div class="hero__acciones revelar">
+          <a class="btn btn--claro" href="#catalogo">Ver productos</a>
+          <a class="btn btn--wsp js-wsp" href="https://walink.co/ae8755" target="_blank" rel="noopener">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+            Hacé tu consulta
+          </a>
+        </div>
+        <dl class="cifras revelar">
+          <div><dt><span class="js-contar" data-hasta="200">0</span>+</dt><dd>productos</dd></div>
+          <div><dt><span class="js-contar" data-hasta="60">0</span>+</dt><dd>medidas</dd></div>
+          <div><dt>3</dt><dd>rubros</dd></div>
+        </dl>
+      </div>
+      <a href="#cinta" class="hero__bajar" aria-label="Seguir bajando"><span></span></a>
+    </section>
+
+    <!-- ——— Cinta de rubros ——— -->
+    <div class="cinta" id="cinta" aria-hidden="true">
+      <div class="cinta__pista" id="cinta-pista"></div>
+    </div>
+
+    <!-- ——— Quiénes somos ——— -->
+    <section class="nosotros">
+      <div class="contenedor nosotros__grid">
+        <div class="revelar">
+          <p class="sobretitulo">Quiénes somos</p>
+          <h2 class="titulo">Un negocio familiar del barrio, con stock para todos.</h2>
+        </div>
+        <div class="revelar">
+          <p class="texto-grande">Papelera Paternal se especializa en artículos para el <strong>embalaje, confitería y descartables</strong>. Atendemos tanto a quien necesita un rollo de cinta como a comercios que compran por mayor.</p>
+          <ul class="sellos">
+            <li><span>🏪</span>Venta minorista</li>
+            <li><span>📦</span>Venta mayorista</li>
+            <li><span>🚚</span>Envíos en CABA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— Catálogo ——— -->
+    <section class="catalogo" id="catalogo">
+      <div class="contenedor">
+        <div class="catalogo__cabeza revelar">
+          <div>
+            <p class="sobretitulo">Catálogo</p>
+            <h2 class="titulo">Nuestros productos</h2>
+            <p class="catalogo__ayuda">Tocá <strong>“Agregar”</strong> en lo que necesites y mandanos toda la consulta junta por WhatsApp.</p>
+          </div>
+          <label class="buscador">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3a7 7 0 1 0 4.2 12.6l5.1 5.1 1.4-1.4-5.1-5.1A7 7 0 0 0 10 3zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/></svg>
+            <span class="visualmente-oculto">Buscar productos</span>
+            <input id="buscar" type="search" placeholder="Buscar: cinta, 50x70, vasos…" autocomplete="off">
+          </label>
+        </div>
+
+        <div class="filtros revelar" id="filtros" role="tablist" aria-label="Filtrar por rubro"></div>
+
+        <p class="resultado" id="resultado" aria-live="polite"></p>
+        <ul class="grilla" id="grilla"></ul>
+        <div class="vacio" id="vacio" hidden>
+          <p>No encontramos <strong id="vacio-termino"></strong> en el catálogo, pero tenemos más de 200 productos.</p>
+          <a class="btn btn--wsp js-wsp js-wsp-busqueda" href="https://walink.co/ae8755" target="_blank" rel="noopener">Preguntanos por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— Cómo comprar ——— -->
+    <section class="comprar" id="como-comprar">
+      <div class="contenedor">
+        <p class="sobretitulo revelar">Cómo comprar</p>
+        <h2 class="titulo revelar">Simple, como en el barrio</h2>
+        <ol class="pasos">
+          <li class="paso revelar">
+            <span class="paso__num">1</span>
+            <h3>Armá tu consulta</h3>
+            <p>Elegí los productos del catálogo o escribinos directamente lo que buscás.</p>
+          </li>
+          <li class="paso revelar">
+            <span class="paso__num">2</span>
+            <h3>Te pasamos precio</h3>
+            <p>Te respondemos por WhatsApp o teléfono con precios y disponibilidad.</p>
+          </li>
+          <li class="paso revelar">
+            <span class="paso__num">3</span>
+            <h3>Retirás o te lo llevamos</h3>
+            <p>Retiro en el local o envío en CABA coordinado previamente.</p>
+          </li>
+        </ol>
+        <div class="datos">
+          <div class="dato revelar">
+            <span class="dato__icono" aria-hidden="true">💵</span>
+            <h3>Medios de pago</h3>
+            <p>Efectivo y transferencia.</p>
+          </div>
+          <div class="dato revelar">
+            <span class="dato__icono" aria-hidden="true">📍</span>
+            <h3>Retiro</h3>
+            <p>Nicasio Oroño 2237, Paternal, CABA.</p>
+          </div>
+          <div class="dato revelar">
+            <span class="dato__icono" aria-hidden="true">🚚</span>
+            <h3>Envíos</h3>
+            <p>En CABA, coordinado previamente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ——— Contacto ——— -->
+    <section class="contacto" id="contacto">
+      <div class="contenedor contacto__grid">
+        <div class="contacto__info revelar">
+          <p class="sobretitulo sobretitulo--claro">Contacto</p>
+          <h2 class="titulo titulo--claro">Vení a vernos</h2>
+          <ul class="contacto__lista">
+            <li>
+              <span class="contacto__etq">Dirección</span>
+              <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Nicasio+Oro%C3%B1o+2237,+CABA,+Argentina" target="_blank" rel="noopener">Nicasio Oroño 2237, Paternal, CABA</a>
+            </li>
+            <li>
+              <span class="contacto__etq">Teléfonos</span>
+              <a href="tel:+541145881052">4588-1052</a> · <a href="tel:+541145821920">4582-1920</a>
+            </li>
+            <li>
+              <span class="contacto__etq">WhatsApp</span>
+              <a class="js-wsp" href="https://walink.co/ae8755" target="_blank" rel="noopener">Escribinos</a>
+            </li>
+          </ul>
+          <div class="contacto__acciones">
+            <a class="btn btn--claro" href="https://www.google.com/maps/dir/?api=1&amp;destination=Nicasio+Oro%C3%B1o+2237,+CABA,+Argentina" target="_blank" rel="noopener">Cómo llegar</a>
+            <a class="btn btn--borde" href="tel:+541145881052">Llamar</a>
+          </div>
+        </div>
+        <div class="mapa revelar" id="mapa">
+          <button type="button" class="mapa__cargar" id="mapa-cargar">
+            <span>Ver mapa interactivo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p class="pie__gigante" aria-hidden="true"><span>PAPELERA</span> <span>PATERNAL</span></p>
+    <div class="contenedor pie__fila">
+      <p>© <span id="anio"></span> Papelera Paternal · Embalaje, confitería y descartables</p>
+      <a href="#inicio" class="pie__arriba">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wsp-flotante js-wsp" href="https://walink.co/ae8755" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.2-.6-.4z"/></svg>
+  </a>
+
+  <!-- Panel "Mi consulta" -->
+  <div class="velo" id="velo" hidden></div>
+  <aside class="consulta" id="consulta" role="dialog" aria-modal="true" aria-labelledby="consulta-titulo" aria-hidden="true">
+    <div class="consulta__cabeza">
+      <h2 id="consulta-titulo">Mi consulta</h2>
+      <button type="button" class="cerrar" id="cerrar-consulta" aria-label="Cerrar">×</button>
+    </div>
+    <div class="consulta__cuerpo">
+      <p class="consulta__vacia" id="consulta-vacia">Todavía no agregaste productos. Buscalos en el catálogo y tocá <strong>“Agregar”</strong>.</p>
+      <ul class="consulta__lista" id="consulta-lista"></ul>
+      <label class="consulta__nota" id="consulta-nota-wrap" hidden>
+        <span>¿Algo más? (cantidades, si es por mayor, envío…)</span>
+        <textarea id="consulta-nota" rows="3" placeholder="Ej.: 10 rollos de cada uno, es para un comercio."></textarea>
+      </label>
+    </div>
+    <div class="consulta__pie" id="consulta-pie" hidden>
+      <button type="button" class="btn btn--wsp btn--ancho" id="enviar-consulta">Enviar por WhatsApp</button>
+      <button type="button" class="enlace" id="vaciar-consulta">Vaciar lista</button>
+      <p class="consulta__aviso" id="consulta-aviso" hidden></p>
+    </div>
+  </aside>
+
+  <div class="aviso-flotante" id="aviso" role="status" aria-live="polite"></div>
+
+  <script src="js/productos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
